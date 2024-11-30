@@ -9,10 +9,6 @@ const ImageCard = ({ image, onImageClick }) => {
         alt={image.description}
         className={styles.Image}
       />
-      <div className={styles.info}>
-        <p>Autor: {image.user.name}</p>
-        <p>Polubienia: {image.likes}</p>
-      </div>
     </div>
   );
 };

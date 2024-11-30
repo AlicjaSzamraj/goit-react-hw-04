@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Modal from "react-modal";
 import styles from "../styles/ImageModal.module.css";
 
-Modal.setAppElement('#root'); 
+Modal.setAppElement("#root"); // Ustawienie głównego elementu aplikacji
 
 const ImageModal = ({ image, onClose }) => {
   useEffect(() => {
@@ -11,9 +11,9 @@ const ImageModal = ({ image, onClose }) => {
         onClose();
       }
     };
-    window.addEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
     return () => {
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
   }, [onClose]);
 
@@ -37,10 +37,17 @@ const ImageModal = ({ image, onClose }) => {
         className={styles.Image}
       />
       <div className={styles.info}>
-        <p><strong>Autor:</strong> {image.user.name}</p>
-        <p><strong>Polubienia:</strong> {image.likes}</p>
-        {image.description && <p><strong>Opis:</strong> {image.description}</p>}
-        {image.alt_description && <p><strong>Alt Opis:</strong> {image.alt_description}</p>}
+        <p>
+          <strong>Autor:</strong> {image.user.name}
+        </p>
+        <p>
+          <strong>Polubienia:</strong> {image.likes}
+        </p>
+        {image.description && (
+          <p>
+            <strong>Opis:</strong> {image.description}
+          </p>
+        )}
       </div>
     </Modal>
   );

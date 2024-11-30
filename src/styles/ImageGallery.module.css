@@ -1,0 +1,15 @@
+.ImageGallery {
+  list-style: none; /* Usunięcie punktowania listy */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 50px;
+  margin: 0;
+  justify-content: center; /* Wycentrowanie listy */
+}
+
+.ImageGalleryItem {
+  flex: 1 1 calc(25% - 16px); /* Stała szerokość dla elementów listy */
+  box-sizing: border-box;
+  max-width: 300px; /* Maksymalna szerokość elementów listy */
+}

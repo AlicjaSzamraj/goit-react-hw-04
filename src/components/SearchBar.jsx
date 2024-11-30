@@ -1,26 +1,35 @@
 import React, { useState } from "react";
-import styles from "../styles/SearchBar.module.css";
+import toast, { Toaster } from "react-hot-toast";
 
-const SearchBar = ({ onSearch }) => {
-  const [input, setInput] = useState("");
+const SearchBar = ({ onSubmit }) => {
+  const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (input.trim()) {
-      onSearch(input);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (inputValue.trim() === "") {
+      toast.error("Proszę wprowadzić hasło wyszukiwania!");
+      return;
     }
+    onSubmit(inputValue);
+    setInputValue("");
   };
 
   return (
-    <form className={styles.SearchBar} onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Wyszukaj obrazy..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button type="submit">Szukaj</button>
-    </form>
+    <header>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="input"
+          type="text"
+          autoComplete="off"
+          autoFocus
+          placeholder="Wyszukaj obrazy i zdjęcia"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button type="submit">Szukaj</button>
+      </form>
+      <Toaster position="top-right" />
+    </header>
   );
 };
 

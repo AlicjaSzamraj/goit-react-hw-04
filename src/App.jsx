@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import SearchBar from "./SearchBar";
-import ImageGallery from "./ImageGallery";
-import LoadMoreBtn from "./LoadMoreBtn";
-import ImageModal from "./ImageModal";
-import ErrorMessage from "./ErrorMessage";
-import Loader from "./Loader";
+import SearchBar from "./components/SearchBar";
+import ImageGallery from "./components/ImageGallery";
+import LoadMoreBtn from "./components/LoadMoreBtn";
+import ImageModal from "./components/ImageModal";
+import ErrorMessage from "./components/ErrorMessage";
+import Loader from "./components/Loader";
 import styles from "./App.module.css";
 
 const App = () => {
@@ -43,7 +43,6 @@ const App = () => {
     }
     setLoading(false);
   };
-
   const fetchImages = async (searchQuery, pageNumber) => {
     const response = await axios.get(`https://api.unsplash.com/search/photos`, {
       params: { query: searchQuery, page: pageNumber },
@@ -56,9 +55,8 @@ const App = () => {
 
   return (
     <div className={styles.App}>
-      <SearchBar onSearch={handleSearch} />
-      {error && <ErrorMessage message={error} />}
-      {loading && <Loader />}
+      <SearchBar onSubmit={handleSearch} />
+      {error && <ErrorMessage message={error} />} {loading && <Loader />}
       <ImageGallery images={images} onImageClick={setSelectedImage} />
       {images.length > 0 && !loading && (
         <LoadMoreBtn onClick={handleLoadMore} />

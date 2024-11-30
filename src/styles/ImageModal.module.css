@@ -16,8 +16,8 @@
   background-color: #fff;
   border-radius: 8px;
   padding: 16px;
-  max-width: 90%; /* Maksymalna szerokość modala */
-  max-height: 90%; /* Maksymalna wysokość modala */
+  max-width: 90%;
+  max-height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,17 +40,17 @@
 
 .Image {
   max-width: 100%;
-  max-height: 80vh; /* Maksymalna wysokość obrazu */
+  max-height: 80vh;
   display: block;
-  margin: 0 auto; /* Wycentrowanie obrazu */
+  margin: 0 auto;
 }
 
 .info {
   padding: 8px 16px;
   background-color: #fff;
-  text-align: center; /* Wycentrowanie tekstu pod obrazem */
+  text-align: center;
 }
 
 .info p {
-  margin: 5px 0; /* Marginesy dla paragrafów */
+  margin: 5px 0;
 }

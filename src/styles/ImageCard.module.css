@@ -13,8 +13,8 @@
 
 .Image {
   width: 100%;
-  height: 200px; /* Stała wysokość obrazów */
-  object-fit: cover; /* Dopasowanie obrazów do kontenera */
+  height: 200px;
+  object-fit: cover;
 }
 
 .info {

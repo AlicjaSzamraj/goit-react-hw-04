@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Modal from "react-modal";
 import styles from "../styles/ImageModal.module.css";
 
-Modal.setAppElement("#root"); // Ustawienie głównego elementu aplikacji
+Modal.setAppElement("#root"); 
 
 const ImageModal = ({ image, onClose }) => {
   useEffect(() => {

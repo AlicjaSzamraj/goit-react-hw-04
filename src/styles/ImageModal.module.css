@@ -50,3 +50,7 @@
   background-color: #fff;
   text-align: center; /* Wycentrowanie tekstu pod obrazem */
 }
+
+.info p {
+  margin: 5px 0; /* Marginesy dla paragrafów */
+}
